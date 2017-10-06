@@ -13,6 +13,8 @@ HUAWEI INTERFACE TEMPERATURE => graph template for the temperature in each inter
 
 HUAWEI INTERFACE POWER (RX/TX) => graph template for the rx and tx power of the SFP in each interface
 
+HUAWEI SFP => template for the current, voltage, temperature and SFP power in the same graph
+
 &nbsp;
 
 HUAWEI => data query template to get huawei data to create all graphs
