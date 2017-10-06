@@ -1,0 +1,91 @@
+<query>
+  <name>Huawei SNMP Data</name>
+  <description>Queries a huawei device for a list of monitorable info</description>
+  <index_order>ifIndex</index_order>
+  <index_order_type>numeric</index_order_type>
+  <oid_index>.1.3.6.1.2.1.47.1.1.1.1.7</oid_index>
+  <oid_index_parse>OID/REGEXP:^.*\.([0-9]{6,8}).*</oid_index_parse>
+  <index_title_format>|chosen_order_field|</index_title_format>
+
+  <fields>
+    <ifIndex>
+      <name>Index</name>
+      <method>walk</method>
+      <source>OID/REGEXP:^.*\.([0-9]{6,8}).*</source>
+      <direction>input</direction>
+      <oid>.1.3.6.1.2.1.47.1.1.1.1.7</oid>
+    </ifIndex>
+    <ifDescr>
+      <name>Description</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>input</direction>
+      <oid>.1.3.6.1.2.1.47.1.1.1.1.7</oid>
+    </ifDescr>
+    <Manufac>
+      <name>Vendor</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>input</direction>
+      <oid>.1.3.6.1.2.1.47.1.1.1.1.12</oid>
+    </Manufac>
+    <partNum>
+      <name>Part Number</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>input</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.3.1.25</oid>
+    </partNum>
+<!--
+    <serialNum>
+      <name>Serial Number</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>input</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.3.1.4</oid>
+    </serialNum>
+    <Model>
+      <name>Model</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>input</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.2.1.2</oid>
+    </Model>
+-->
+    <ifRx>
+      <name>Rx Power (dBm)</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>output</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.3.1.32</oid>
+    </ifRx>
+    <ifTx>
+      <name>Tx Power (dBm)</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>output</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.3.1.33</oid>
+    </ifTx>
+    <ifVoltage>
+      <name>Voltage (mV)</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>output</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.3.1.6</oid>
+    </ifVoltage>
+    <ifCurrent>
+      <name>Current (mA)</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>output</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.3.1.31</oid>
+    </ifCurrent>
+    <ifTemp>
+      <name>Temperature (ºC)</name>
+      <method>walk</method>
+      <source>value</source>
+      <direction>output</direction>
+      <oid>.1.3.6.1.4.1.2011.5.25.31.1.1.3.1.5</oid>
+    </ifTemp>
+  </fields>
+</query>
